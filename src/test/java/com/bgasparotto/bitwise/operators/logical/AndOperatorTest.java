@@ -1,4 +1,4 @@
-package com.bgasparotto.bitwise.operators;
+package com.bgasparotto.bitwise.operators.logical;
 
 import org.junit.jupiter.api.Test;
 
