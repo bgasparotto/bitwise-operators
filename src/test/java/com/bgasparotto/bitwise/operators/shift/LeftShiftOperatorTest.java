@@ -8,28 +8,25 @@ public class LeftShiftOperatorTest {
 
     @Test
     public void shouldLeftShiftBitsOnce() {
-        byte lOperand = (byte) 0b11100101;
-        byte expected = (byte) 0b11001010;
+        int lOperand = 0b00011100_00000000_00000000_11100101;
+        int expected = 0b00111000_00000000_00000001_11001010;
 
-        byte result = (byte) (lOperand << 1);
-        assertThat(result).isEqualTo(expected);
+        assertThat(lOperand << 1).isEqualTo(expected);
     }
 
     @Test
     public void shouldLeftShiftBitsTwice() {
-        byte lOperand = (byte) 0b11100101;
-        byte expected = (byte) 0b10010100;
+        int lOperand = 0b00011100_00000000_00000000_11100101;
+        int expected = 0b01110000_00000000_00000011_10010100;
 
-        byte result = (byte) (lOperand << 2);
-        assertThat(result).isEqualTo(expected);
+        assertThat(lOperand << 2).isEqualTo(expected);
     }
 
     @Test
     public void shouldLeftShiftBitsThreeTimes() {
-        byte lOperand = (byte) 0b11100101;
-        byte expected = (byte) 0b00101000;
+        int lOperand = 0b00011100_00000000_00000000_11100101;
+        int expected = 0b11100000_00000000_00000111_00101000;
 
-        byte result = (byte) (lOperand << 3);
-        assertThat(result).isEqualTo(expected);
+        assertThat(lOperand << 3).isEqualTo(expected);
     }
 }
