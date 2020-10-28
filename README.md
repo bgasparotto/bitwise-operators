@@ -57,6 +57,11 @@ bit for the *two's complement* sign.
 +-------+--------+--------+----------------------+---------------------+
 ```
 
+> **Important!** Types smaller than int (byte, short and char) will be first promoted to int before
+> a shift operation takes place. If you convert them back into the smaller types, the left most bits 
+> will be truncated, producing undesired effects. Thus, it's recommended to perform shift operations
+> on ints or longs instead.
+
 ### Two's Complement
 - For positive numbers, the sign bit is `0` and the decimal value is the `sum of the remaining bits`
 - For negative, the sign is `1` and the decimal value is `- sign + sum of the remaining bits`
