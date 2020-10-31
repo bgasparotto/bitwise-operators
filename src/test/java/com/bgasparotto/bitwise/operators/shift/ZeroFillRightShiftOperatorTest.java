@@ -29,4 +29,23 @@ public class ZeroFillRightShiftOperatorTest {
 
         assertThat(lOperand >>> 2).isEqualTo(expected);
     }
+
+    @Test
+    public void shouldZeroFillButTruncateWhenCastDown() {
+        byte operand = (byte) 0b11100101;
+        int expectedInt = 0b00111111_11111111_11111111_11111001;
+
+        assertThat(operand >>> 2).isEqualTo(expectedInt);
+
+        byte truncatedResult = (byte) 0b11111001;
+        assertThat((byte) (operand >>> 2)).isEqualTo(truncatedResult);
+    }
+
+    @Test
+    public void shouldZeroFillRightShiftByteWhenCombinedWithZeroes() {
+        byte lOperand = (byte) 0b11100101;
+        byte expected = (byte) 0b00111001;
+
+        assertThat((lOperand & 0xFF) >>> 2).isEqualTo(expected);
+    }
 }
